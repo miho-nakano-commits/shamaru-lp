@@ -51,6 +51,34 @@ body {
   margin-inline: auto;
 }
 
+.feature-photo-correction {
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  left: 6.0209%;
+  width: 25.2618%;
+  height: 11.7978%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.feature-photo-correction__inner {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  transform: scaleX(0.94);
+  transform-origin: center;
+}
+
+.feature-photo-correction__inner > img {
+  position: absolute;
+  top: -211.9048%;
+  left: -23.8342%;
+  width: 395.8549%;
+  max-width: none;
+  height: auto;
+}
+
 .visual-section > .features-heading-replacement {
   position: absolute;
   z-index: 1;
@@ -152,6 +180,24 @@ body {
   top: 75.6%;
   width: 86%;
   height: 8.1%;
+}
+
+.seminar-company-replacement {
+  position: absolute;
+  z-index: 2;
+  top: 93.28%;
+  left: 31%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38%;
+  height: 2.05%;
+  background: #888;
+  color: #fff;
+  font-size: min(2.2vw, 17px);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .sr-only {
