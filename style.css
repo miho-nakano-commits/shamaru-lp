@@ -44,6 +44,13 @@ body {
   margin: 0;
 }
 
+.visual-section--features > img:first-of-type {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
 .visual-section > .features-heading-replacement {
   position: absolute;
   z-index: 1;
