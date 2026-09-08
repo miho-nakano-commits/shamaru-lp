@@ -126,17 +126,34 @@ body {
   position: absolute;
   z-index: 2;
   display: block;
+  overflow: visible;
   border-radius: 3px;
+  background-color: #fff;
   cursor: pointer;
   line-height: normal;
-  transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition: box-shadow 160ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 
+.cta-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  transform-origin: center;
+  animation: cta-gentle-pulse 2s ease-in-out infinite;
+}
+
+.cta-visual > img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+}
+
 .cta-hotspot:hover {
-  background: rgb(255 255 255 / 10%);
   box-shadow: 0 5px 18px rgb(0 116 58 / 22%);
-  transform: translateY(-1px);
 }
 
 .cta-hotspot:focus-visible {
@@ -146,30 +163,65 @@ body {
 
 .cta-hotspot--hero {
   left: 7%;
-  top: 86.2%;
+  top: 85.5%;
   width: 86%;
-  height: 8.2%;
+  height: 13%;
+}
+
+.cta-hotspot--hero .cta-visual > img {
+  top: -657.6923%;
+  left: -8.1395%;
+  width: 116.2791%;
 }
 
 .cta-hotspot--comic {
   left: 7.2%;
-  top: 97.8%;
+  top: 97.2%;
   width: 85.7%;
-  height: 1.4%;
+  height: 2.8%;
+}
+
+.cta-hotspot--comic .cta-visual > img {
+  top: -3471.4286%;
+  left: -8.4014%;
+  width: 116.6861%;
 }
 
 .cta-hotspot--skills {
   left: 7%;
-  top: 92.3%;
+  top: 90%;
   width: 86%;
-  height: 4.8%;
+  height: 10%;
+}
+
+.cta-hotspot--skills .cta-visual > img {
+  top: -900%;
+  left: -8.1395%;
+  width: 116.2791%;
 }
 
 .cta-hotspot--seminar {
   left: 7%;
-  top: 75.6%;
+  top: 74.5%;
   width: 86%;
-  height: 8.1%;
+  height: 13%;
+}
+
+.cta-hotspot--seminar .cta-visual > img {
+  top: -573.0769%;
+  left: -8.1395%;
+  width: 116.2791%;
+}
+
+@keyframes cta-gentle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
 }
 
 .privacy-policy-hotspot {
