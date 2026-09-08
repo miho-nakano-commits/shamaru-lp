@@ -62,21 +62,11 @@ body {
   pointer-events: none;
 }
 
-.feature-photo-correction__inner {
-  position: absolute;
-  inset: 0;
-  overflow: visible;
-  transform: scaleX(0.94);
-  transform-origin: center;
-}
-
-.feature-photo-correction__inner > img {
-  position: absolute;
-  top: -211.9048%;
-  left: -23.8342%;
-  width: 395.8549%;
-  max-width: none;
-  height: auto;
+.feature-photo-correction > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
 }
 
 .visual-section > .features-heading-replacement {
