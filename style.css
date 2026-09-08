@@ -131,7 +131,6 @@ body {
   background-color: #fff;
   cursor: pointer;
   line-height: normal;
-  transition: box-shadow 160ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -150,10 +149,6 @@ body {
   display: block;
   max-width: none;
   height: auto;
-}
-
-.cta-hotspot:hover {
-  box-shadow: 0 5px 18px rgb(0 116 58 / 22%);
 }
 
 .cta-hotspot:focus-visible {
@@ -175,16 +170,16 @@ body {
 }
 
 .cta-hotspot--comic {
-  left: 7.2%;
+  left: 7%;
   top: 97.2%;
-  width: 85.7%;
+  width: 87%;
   height: 2.8%;
 }
 
 .cta-hotspot--comic .cta-visual > img {
   top: -3471.4286%;
-  left: -8.4014%;
-  width: 116.6861%;
+  left: -8.046%;
+  width: 114.9425%;
 }
 
 .cta-hotspot--skills {
