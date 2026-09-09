@@ -244,11 +244,11 @@ body {
   left: 9.1%;
   display: flex;
   align-items: center;
-  width: 27%;
+  width: 58%;
   height: 3.8%;
-  background: #f6f8fa;
+  background: #fff;
   color: #414449;
-  font-size: min(3.5vw, 27px);
+  font-size: min(3vw, 23px);
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
