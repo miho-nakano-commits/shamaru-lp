@@ -7,9 +7,9 @@
       name="description"
       content="SNS・YouTube専門の就労継続支援B型 NeoWork誉田。デザイン・動画編集・音楽を、自分のペースで学びながら働けます。"
     />
-    <meta name="theme-color" content="#7438bd" />
+    <meta name="theme-color" content="#fff8ed" />
     <title>シャマル千葉市｜SNS・YouTube専門の就労継続支援B型</title>
-    <link rel="stylesheet" href="style.css?v=20260909-2" />
+    <link rel="stylesheet" href="style.css?v=20261015" />
   </head>
   <body>
     <main class="lp" aria-label="NeoWork誉田 ランディングページ">
@@ -18,16 +18,14 @@
           うつや障がいで就職に悩んでいる方へ。SNS・YouTubeの就労継続支援B型
         </h1>
         <img
-          src="img/section-01-hero.webp"
+          src="img/section-01-hero-v2.webp"
           alt="自分のペースで働きながら、デザイン・動画編集・音楽が学べる、SNS・YouTubeの就労継続支援B型。未経験OK、1時間からOK、在宅利用OK。"
-          width="1534"
-          height="2172"
+          width="1122"
+          height="1402"
           fetchpriority="high"
         />
         <a class="cta-hotspot cta-hotspot--hero" href="https://timerex.net/s/shamaru_4b67/d1ec0ae7/" aria-label="無料オンライン説明会を予約">
-          <span class="cta-visual" aria-hidden="true">
-            <img src="img/section-01-hero.webp" alt="" width="1534" height="2172" />
-          </span>
+          <span class="cta-button-label">無料オンライン説明会を予約 <b aria-hidden="true">›</b></span>
         </a>
       </section>
 
@@ -45,39 +43,15 @@
       <section class="visual-section visual-section--comic" aria-labelledby="comic-title">
         <h2 id="comic-title" class="sr-only">SNS・YouTube専門の就労継続支援B型を漫画でご紹介</h2>
         <img
-          src="img/section-03-comic.webp"
+          src="img/section-03-comic-v2.webp"
           alt="就労継続支援B型 NeoWork誉田で、SNS投稿や動画編集の仕事を始めるまでを紹介する漫画。"
-          width="1534"
-          height="10710"
+          width="724"
+          height="2172"
           loading="lazy"
-        />
-        <img
-          class="comic-image-replacement comic-image-replacement--service"
-          src="img/comic-service-screen-shamaru.webp"
-          alt=""
-          aria-hidden="true"
-          width="1378"
-          height="1064"
-        />
-        <img
-          class="comic-image-replacement comic-image-replacement--exterior"
-          src="img/comic-facility-exterior-shamaru-chiba.webp"
-          alt=""
-          aria-hidden="true"
-          width="1348"
-          height="1044"
-        />
-        <img
-          class="comic-image-replacement comic-image-replacement--conversation"
-          src="img/comic-facility-conversation-shamaru.webp"
-          alt=""
-          aria-hidden="true"
-          width="1626"
-          height="1038"
         />
         <a class="cta-hotspot cta-hotspot--comic" href="https://timerex.net/s/shamaru_4b67/d1ec0ae7/" aria-label="無料オンライン説明会を予約">
           <span class="cta-visual" aria-hidden="true">
-            <img src="img/section-03-comic.webp" alt="" width="1534" height="10710" loading="lazy" />
+            <img src="img/section-03-comic-v2.webp" alt="" width="724" height="2172" loading="lazy" />
           </span>
         </a>
       </section>
@@ -165,6 +139,14 @@
           height="2350"
           loading="lazy"
         />
+        <img
+          class="seminar-heading-replacement"
+          src="img/seminar-heading-v2.webp"
+          alt=""
+          aria-hidden="true"
+          width="2101"
+          height="748"
+        />
         <span class="seminar-name-replacement" aria-hidden="true">シャマル千葉市 はどんなところ？</span>
         <a
           class="privacy-policy-hotspot"
@@ -185,5 +167,44 @@
         </a>
       </section>
     </main>
+    <script>
+      (() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const getCampaignValue = (parameterName, storageKey) => {
+          if (queryParams.has(parameterName)) {
+            const valueFromUrl = queryParams.get(parameterName);
+            try {
+              if (valueFromUrl) {
+                sessionStorage.setItem(storageKey, valueFromUrl);
+              } else {
+                sessionStorage.removeItem(storageKey);
+              }
+            } catch (_) {
+              // sessionStorageが利用できない環境でもURL上の値で処理を続けます。
+            }
+            return valueFromUrl || null;
+          }
+
+          try {
+            return sessionStorage.getItem(storageKey);
+          } catch (_) {
+            return null;
+          }
+        };
+
+        const source = getCampaignValue("utm_source", "shamaru_utm_source");
+        const content = getCampaignValue("utm_content", "shamaru_utm_content");
+        const isMetaSource = source?.toLowerCase() === "meta";
+
+        if (!isMetaSource && !content) return;
+
+        document.querySelectorAll('a[href^="https://timerex.net/"]').forEach((link) => {
+          const timerexUrl = new URL(link.href);
+          if (isMetaSource) timerexUrl.searchParams.set("fp83awt485l7y", "Meta");
+          if (content) timerexUrl.searchParams.set("am3si2410bh8u", content);
+          link.href = timerexUrl.toString();
+        });
+      })();
+    </script>
   </body>
 </html>
