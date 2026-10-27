@@ -32,6 +32,7 @@ body {
 img { max-width: 100%; }
 a { color: inherit; }
 .mobile-break { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 .lp {
   width: min(100%, var(--page-width));
@@ -255,22 +256,72 @@ a { color: inherit; }
 /* Comic */
 .comic {
   position: relative;
-  background:
-    linear-gradient(90deg, transparent 0 48%, rgb(44 158 157 / 7%) 48% 52%, transparent 52%),
-    #fff;
-}
-.section-heading--comic { margin-left: auto; text-align: right; }
-.section-heading--comic .section-heading__en { justify-content: flex-end; }
-.comic__frame {
-  width: min(100%, 724px);
-  margin: 0 auto;
-  overflow: hidden;
-  border: 1px solid #ede6e1;
-  border-radius: 8px;
+  width: min(100%, 767px);
+  padding: 0;
+  margin-inline: auto;
   background: #fff;
-  box-shadow: var(--shadow);
+  line-height: 0;
 }
-.comic__frame img { display: block; width: 100%; height: auto; margin-top: -8.3%; margin-bottom: -11%; }
+.comic__frame {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+}
+.comic__base { display: block; width: 100%; height: auto; margin: 0; }
+.comic__replacement {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+.comic__replacement--service { top: 22.7731%; left: 5.9322%; width: 88.0052%; height: 9.7012%; }
+.comic__replacement--exterior { top: 41.2979%; left: 5.9322%; width: 42.9596%; height: 4.7339%; }
+.comic__replacement--conversation { top: 79.1597%; left: 5.9322%; width: 88.0052%; height: 7.9085%; }
+.comic__cta {
+  position: absolute;
+  z-index: 2;
+  top: 97.2%;
+  left: 7%;
+  display: block;
+  width: 87%;
+  height: 2.8%;
+  overflow: visible;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  line-height: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+.comic__cta-visual {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  transform-origin: center;
+  animation: comic-cta-pulse 2s ease-in-out infinite;
+}
+.comic__cta-visual > img {
+  position: absolute;
+  top: -3471.4286%;
+  left: -8.046%;
+  display: block;
+  width: 114.9425%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+.comic__cta:focus-visible { outline: 4px solid #ffde00; outline-offset: 4px; }
+@keyframes comic-cta-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(.9); } }
 
 /* Features */
 .features { background: #fff7f8; }
@@ -416,17 +467,7 @@ a { color: inherit; }
   .needs__list li { min-height: 0; padding: 22px 15px; border-radius: 18px; }
   .needs__list li::after { bottom: -15px; left: 24px; border-top-width: 17px; border-right-width: 16px; }
   .needs__list p { font-size: clamp(16px, 4.6vw, 19px); line-height: 1.65; }
-  .comic { padding-right: 0; padding-left: 0; }
-  .comic .section-heading { padding: 0 18px; }
-  .comic__frame { width: 100%; border-right: 0; border-left: 0; border-radius: 0; box-shadow: none; }
-  .comic__frame img {
-    width: 225%;
-    max-width: none;
-    margin-top: -18.7%;
-    margin-bottom: -19%;
-    margin-left: -62.5%;
-  }
-  .comic > .cta-button { width: calc(100% - 36px); }
+  .comic { width: 100%; }
 
   .feature-row,
   .feature-row--reverse { display: grid; grid-template-columns: 1fr; gap: 0; }
@@ -467,9 +508,7 @@ a { color: inherit; }
 
 @media (max-width: 360px) {
   .section { padding-right: 15px; padding-left: 15px; }
-  .comic { padding-right: 0; padding-left: 0; }
-  .comic .section-heading { padding-right: 15px; padding-left: 15px; }
-  .comic > .cta-button { width: calc(100% - 30px); }
+  .comic { width: 100%; padding-right: 0; padding-left: 0; }
   .hero__content { padding-right: 11px; padding-left: 11px; }
   .hero__copy { width: 74%; }
   .hero__copy p { font-size: 16px; }
@@ -480,5 +519,6 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .cta-button { animation: none; }
+  .cta-button,
+  .comic__cta-visual { animation: none; }
 }
