@@ -436,9 +436,9 @@ a { color: inherit; }
   font-size: clamp(9px, 1.8vw, 14px);
   line-height: 1.35;
 }
-.comic-dialogue--relief { top: 51%; right: 2.5%; width: 27%; height: 10%; }
+.comic-dialogue--relief { top: 51%; right: 5%; width: 25%; height: 10%; }
 .comic-dialogue--fun { top: 86%; left: 2.5%; width: 26%; height: 12%; }
-.comic-dialogue--steady { top: 86%; right: 2.5%; width: 18%; height: 12%; }
+.comic-dialogue--steady { top: 86%; right: 5%; width: 22%; height: 12%; }
 .comic-greeting { aspect-ratio: 3 / 1; }
 .comic-greeting > img { display: block; width: 100%; height: auto; margin: 0; }
 .comic-greeting__sign {
