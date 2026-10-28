@@ -492,6 +492,15 @@ a { color: inherit; }
 .footer a { font-size: 14px; text-underline-offset: 4px; }
 .footer p { margin: 10px 0 0; font-size: 13px; line-height: 1.7; }
 
+@media (min-width: 781px) and (max-width: 1024px) {
+  .hero__social-icon--youtube {
+    top: calc(28vw + 173px);
+    bottom: auto;
+    left: 24px;
+    width: 36px;
+  }
+}
+
 @media (max-width: 780px) {
   html, body { background: #fff; }
   .lp { width: 100%; box-shadow: none; }
