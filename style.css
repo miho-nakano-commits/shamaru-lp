@@ -153,6 +153,8 @@ a { color: inherit; }
 }
 .hero__service span {
   display: inline-block;
+  padding-right: .12em;
+  margin-right: -.06em;
   color: transparent;
   background: linear-gradient(110deg, #c90f67 3%, #9d258f 52%, #572395 100%);
   -webkit-background-clip: text;
