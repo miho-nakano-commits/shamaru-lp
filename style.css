@@ -138,21 +138,73 @@ a { color: inherit; }
 .hero__copy p { margin: 0 0 8px; font-size: clamp(23px, 3.2vw, 38px); font-weight: 700; line-height: 1.45; }
 .hero__copy p strong { color: var(--pink-deep); }
 .hero h1 { margin: 0; font-size: clamp(28px, 4.1vw, 48px); font-weight: 900; line-height: 1.35; }
-.hero__service { margin: 34px 0 30px; font-size: clamp(27px, 4.2vw, 50px); font-weight: 900; letter-spacing: -.04em; line-height: 1.25; }
-.hero__service span { color: var(--pink-deep); }
-.hero__labels { display: flex; flex-wrap: wrap; gap: 10px; }
-.hero__labels span {
-  min-width: 145px;
-  padding: 10px 16px;
-  border: 1px solid rgb(44 158 157 / 24%);
-  border-radius: 9px;
-  background: rgb(255 255 255 / 88%);
-  box-shadow: 0 8px 20px rgb(76 69 67 / 7%);
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
+.hero__service {
+  position: relative;
+  z-index: 4;
+  width: min(700px, 112%);
+  margin: 28px 0 32px;
+  color: #17191f;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(38px, 5.5vw, 66px);
+  font-weight: 900;
+  letter-spacing: -.065em;
+  line-height: 1.08;
+  text-shadow: 0 3px 0 rgb(255 255 255 / 92%);
 }
-.hero__labels strong { margin-left: 5px; color: var(--teal-deep); font-size: 22px; }
+.hero__service span {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(110deg, #e33688 5%, #d83789 42%, #8c48d9 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08em;
+  font-style: italic;
+  letter-spacing: -.075em;
+  filter: drop-shadow(0 2px 0 #fff) drop-shadow(0 3px 2px rgb(85 53 91 / 17%));
+}
+.hero__labels {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(132px, 164px));
+  justify-content: start;
+  gap: 14px;
+}
+.hero__labels span {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 18px 9px;
+  place-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 14px 30px rgb(82 56 71 / 14%);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  isolation: isolate;
+}
+.hero__labels span::before,
+.hero__labels span::after {
+  position: absolute;
+  inset: 3px;
+  border: 1.5px solid rgb(220 54 124 / 72%);
+  border-radius: 41% 59% 47% 53% / 54% 42% 58% 46%;
+  content: "";
+  pointer-events: none;
+  transform: rotate(14deg);
+}
+.hero__labels span::after {
+  inset: 8px 2px;
+  border-color: rgb(112 70 163 / 54%);
+  border-radius: 55% 45% 57% 43% / 44% 56% 42% 58%;
+  transform: rotate(-13deg);
+}
+.hero__labels strong { display: block; margin: 3px 0 0; color: #df1264; font-size: 31px; line-height: 1; }
 .cta-button--hero { margin: 34px 0 0; }
 .hero__photo {
   position: relative;
@@ -176,6 +228,12 @@ a { color: inherit; }
   box-shadow: 0 0 0 20px rgb(255 255 255 / 13%);
   content: "";
 }
+.hero__socials { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.hero__social-icon { position: absolute; display: block; width: 72px; filter: drop-shadow(0 8px 10px rgb(72 50 68 / 19%)); }
+.hero__social-icon svg { display: block; width: 100%; height: auto; }
+.hero__social-icon--instagram { top: 168px; left: 52%; width: 84px; transform: rotate(8deg); }
+.hero__social-icon--youtube { bottom: 222px; left: 47%; width: 82px; transform: rotate(-9deg); }
+.hero__social-icon--tiktok { top: 380px; right: 20px; width: 70px; transform: rotate(8deg); }
 
 /* Needs */
 .needs {
@@ -443,22 +501,22 @@ a { color: inherit; }
   .cta-button { min-height: 66px; padding: 14px 15px 14px 20px; margin-top: 40px; border-radius: 15px; font-size: 16px; }
   .cta-button > span:last-child { flex-basis: 36px; width: 36px; height: 36px; }
 
-  .hero { display: block; min-height: 520px; padding-bottom: 0; }
-  .hero__content { min-height: 520px; padding: 22px 14px 24px; }
+  .hero { display: block; min-height: 670px; padding-bottom: 0; }
+  .hero__content { min-height: 670px; padding: 22px 14px 24px; }
   .hero__eyebrow { margin-bottom: 15px; padding: 6px 10px; font-size: 11px; }
   .hero__copy { width: 74%; }
   .hero__copy p { margin-bottom: 5px; font-size: 17px; line-height: 1.4; }
   .hero h1 { font-size: clamp(22px, 6.2vw, 26px); line-height: 1.38; }
-  .hero__service { width: 76%; margin: 17px 0 19px; font-size: clamp(25px, 7vw, 28px); line-height: 1.2; }
-  .hero__labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .hero__labels span { min-width: 0; padding: 7px 3px; border-color: rgb(44 158 157 / 18%); background: rgb(255 255 255 / 91%); font-size: 10px; }
-  .hero__labels strong { display: block; margin: 0; font-size: 17px; }
+  .hero__service { width: 84%; margin: 18px 0 24px; font-size: clamp(32px, 8.7vw, 48px); line-height: 1.03; }
+  .hero__labels { width: calc(100vw - 28px); max-width: 520px; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: center; gap: clamp(4px, 1.8vw, 11px); }
+  .hero__labels span { min-width: 0; padding: 10px 2px; background: rgb(255 255 255 / 93%); font-size: clamp(11px, 2.6vw, 15px); }
+  .hero__labels strong { margin-top: 2px; font-size: clamp(20px, 5vw, 28px); }
   .hero__photo {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
-    height: 520px;
+    height: 670px;
     min-height: 0;
     border-radius: 0;
     background-position: center, right center;
@@ -473,7 +531,10 @@ a { color: inherit; }
     background: linear-gradient(90deg, #fff7f6 0%, rgb(255 247 246 / 92%) 34%, rgb(255 247 246 / 22%) 66%, transparent 82%);
     box-shadow: none;
   }
-  .cta-button--hero { margin-top: 20px; }
+  .hero__social-icon--instagram { top: 76px; right: 8px; left: auto; width: clamp(44px, 9.8vw, 62px); }
+  .hero__social-icon--youtube { top: 286px; bottom: auto; left: 49%; width: clamp(50px, 11vw, 68px); }
+  .hero__social-icon--tiktok { top: 245px; right: 5px; width: clamp(45px, 9vw, 58px); }
+  .cta-button--hero { position: relative; z-index: 5; width: calc(100vw - 28px); max-width: 620px; margin-top: 18px; }
 
   .needs { padding-right: 15px; padding-left: 15px; }
   .needs .section-heading { margin-bottom: 30px; }
@@ -537,7 +598,11 @@ a { color: inherit; }
   .hero__copy { width: 74%; }
   .hero__copy p { font-size: 16px; }
   .hero h1 { font-size: 21px; }
-  .hero__service { font-size: 26px; }
+  .hero__service { width: 88%; font-size: 31px; }
+  .hero__labels span { font-size: 10px; }
+  .hero__labels strong { font-size: 19px; }
+  .hero__social-icon--instagram { right: 6px; left: auto; }
+  .hero__social-icon--youtube { top: 290px; }
   .cta-button { font-size: 15px; }
 }
 
