@@ -417,11 +417,11 @@ a { color: inherit; }
 .feature-row p { margin: 8px 0 0; color: #565b63; font-size: clamp(15px, 1.8vw, 18px); line-height: 1.9; }
 .media-sprite { overflow: hidden; border-radius: 30px 8px 30px 8px; background-repeat: no-repeat; box-shadow: var(--shadow); }
 .feature-row .media-sprite { min-height: 260px; }
-.media-sprite--feature-1 { background: url("img/feature-direct-guidance.jpg") center 42% / cover no-repeat; }
-.media-sprite--feature-2 { background: url("img/feature-home-hq.jpg") center / cover no-repeat; }
-.media-sprite--feature-3 { background: url("img/feature-wage-hq.jpg") center / cover no-repeat; }
-.media-sprite--feature-4 { background: url("img/feature-beginner-hq.jpg") center / cover no-repeat; }
-.media-sprite--feature-5 { background: url("img/feature-employment-hq.jpg") center / cover no-repeat; }
+.media-sprite--feature-1 { background: url("img/feature-direct-guidance-opt.webp") center 42% / cover no-repeat; }
+.media-sprite--feature-2 { background: url("img/feature-home-opt.webp") center / cover no-repeat; }
+.media-sprite--feature-3 { background: url("img/feature-wage-opt.webp") center / cover no-repeat; }
+.media-sprite--feature-4 { background: url("img/feature-beginner-opt.webp") center / cover no-repeat; }
+.media-sprite--feature-5 { background: url("img/feature-employment-opt.webp") center / cover no-repeat; }
 
 /* Skills */
 .skills { background: #fff; }
@@ -440,11 +440,11 @@ a { color: inherit; }
 .skill-card--cream { background: #fff8e9; }
 .skill-card--mint { background: #ecf8f5; }
 .skill-card--lilac { background: #f5f0fb; }
-.media-sprite--skill-1 { background: url("img/skill-sns-hq.jpg") center / cover no-repeat; }
-.media-sprite--skill-2 { background: url("img/skill-design-hq.jpg") center / cover no-repeat; }
-.media-sprite--skill-3 { background: url("img/skill-illustration-hq.jpg") center / cover no-repeat; }
-.media-sprite--skill-4 { background: url("img/skill-video-hq.jpg") center / cover no-repeat; }
-.media-sprite--skill-5 { background: url("img/skill-music-hq.jpg") center / cover no-repeat; }
+.media-sprite--skill-1 { background: url("img/skill-sns-opt.webp") center / cover no-repeat; }
+.media-sprite--skill-2 { background: url("img/skill-design-opt.webp") center / cover no-repeat; }
+.media-sprite--skill-3 { background: url("img/skill-illustration-opt.webp") center / cover no-repeat; }
+.media-sprite--skill-4 { background: url("img/skill-video-opt.webp") center / cover no-repeat; }
+.media-sprite--skill-5 { background: url("img/skill-music-opt.webp") center / cover no-repeat; }
 
 /* Voices */
 .voices { position: relative; background: linear-gradient(180deg, #eef9f8, #f8fcfc); }
