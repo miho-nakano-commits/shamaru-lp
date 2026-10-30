@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --page-width: 1120px;
+  --page-width: 767px;
   --ink: #30343d;
   --muted: #6f737c;
   --pink: #e95f86;
@@ -40,6 +40,8 @@ a { color: inherit; }
   overflow: hidden;
   background: #fff;
   box-shadow: 0 0 70px rgb(60 51 46 / 13%);
+  container-type: inline-size;
+  container-name: lp;
 }
 
 .section { padding: clamp(72px, 9vw, 112px) clamp(26px, 7vw, 82px); }
@@ -503,9 +505,13 @@ a { color: inherit; }
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 767px) {
   html, body { background: #fff; }
+  body { min-width: 0; }
   .lp { width: 100%; box-shadow: none; }
+}
+
+@container lp (max-width: 780px) {
   .section { padding: 60px 18px; }
   .section-heading { margin-bottom: 38px; }
   .section-heading h2 { font-size: clamp(27px, 7.7vw, 36px); line-height: 1.42; }
